@@ -24,7 +24,7 @@ local Camera       = Workspace.CurrentCamera
 
 local lp = Players.LocalPlayer
 
-local GLOBAL_CONFIG_FILE = "ORsDuel_Config.json"
+local GLOBAL_CONFIG_FILE = "LightDuel_Config.json"
 local _globalConfig = {}
 
 local function _saveGlobalConfig()
@@ -118,8 +118,8 @@ task.spawn(function()
 end);
 
 pcall(function()
-    if CoreGui:FindFirstChild("ORsDuel_v4") then
-        CoreGui:FindFirstChild("ORsDuel_v4"):Destroy()
+    if CoreGui:FindFirstChild("LightHubV1") then
+        CoreGui:FindFirstChild("LightHubV1"):Destroy()
     end
 end);
 
@@ -129,14 +129,14 @@ pcall(function()
 end);
 
 local Screen = Instance.new("ScreenGui")
-Screen.Name           = "ORsDuel_v4"
+Screen.Name           = "LightHubV1"
 Screen.ResetOnSpawn   = false
 Screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Screen.Parent         = CoreGui;
 
 task.spawn(function()
     local introGui = Instance.new("ScreenGui", CoreGui)
-    introGui.Name = "OrkszIntro"
+    introGui.Name = "LightIntro"
     introGui.ResetOnSpawn = false
     introGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     introGui.DisplayOrder = 999
@@ -174,8 +174,8 @@ task.spawn(function()
     }):Play()
     task.wait(0.35)
 
-    local part1 = "Orksz Duels"
-    local part2 = " > Nine Duels"
+    local part1 = "Light Duels"
+    local part2 = " > V1"
     local full   = part1 .. part2
 
     for i = 1, #full do
@@ -682,7 +682,7 @@ do
 end
 
 local hubTitleLbl = New("TextLabel", {
-    Text = "ORKSZ DUELS", TextColor3 = Color3.fromRGB(255, 255, 255),
+    Text = "LIGHT DUELS", TextColor3 = Color3.fromRGB(255, 255, 255),
     Font = Enum.Font.GothamBlack, TextSize = 16,
     Size = UDim2.new(1, 0, 0, 36), Position = UDim2.new(0, 0, 0, 0),
     BackgroundTransparency = 1, TextXAlignment = "Center", ZIndex = 6, Parent = MainFrame,
@@ -857,7 +857,7 @@ do
     title.Size = UDim2.new(1, 0, 1, 0)
     title.Position = UDim2.new(0, 0, 0, 0)
     title.BackgroundTransparency = 1
-    title.Text = "OR's DUEL"
+    title.Text = "LIGHT DUEL"
     title.TextColor3 = Color3.fromRGB(255, 255, 255)
     title.Font = Enum.Font.Bangers
     title.TextSize = 22
@@ -3170,7 +3170,7 @@ end);
         task.delay(0.4, function()
             TweenService:Create(tStroke, TweenInfo.new(0.25), {Transparency = 1}):Play()
         end);
-        local msg = "OR's on top!"
+        local msg = "Why Did Lighthub Solo?"
 
         local sent = false
         pcall(function()
@@ -4698,8 +4698,8 @@ do
     local RELOAD_URL = (getgenv and getgenv().SCRIPT_RELOAD_URL) or ""
 
     if getgenv then
-        if getgenv().ORS_AUTOLOAD == nil then
-            getgenv().ORS_AUTOLOAD = false
+        if getgenv().LIGHT_AUTOLOAD == nil then
+            getgenv().LIGHT_AUTOLOAD = false
         end
     end
 
@@ -4707,8 +4707,8 @@ do
     local kickConn = nil
 
     if getgenv then
-        if not getgenv().ORS_LAST_RELOAD then
-            getgenv().ORS_LAST_RELOAD = 0
+        if not getgenv().LIGHT_LAST_RELOAD then
+            getgenv().LIGHT_LAST_RELOAD = 0
         end
     end
 
